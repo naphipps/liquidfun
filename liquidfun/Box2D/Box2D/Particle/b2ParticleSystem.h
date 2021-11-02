@@ -280,7 +280,18 @@ struct b2ParticleSystemDef
 
 class b2ParticleSystem
 {
+private:
+    
+    void* m_userData;
+    
 public:
+    
+    //gets the particle system's user data
+    inline void* GetUserData() {return this->m_userData;}
+    
+    //sets the user data on the particle system
+    inline void SetUserData(void* userData){this->m_userData = userData;}
+    
 	/// Create a particle whose properties have been defined.
 	/// No reference to the definition is retained.
 	/// A simulation step must occur before it's possible to interact with a
